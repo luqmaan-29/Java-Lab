@@ -1,23 +1,23 @@
 public class Lab1b {
 
-    // Constructor with default settings (no need to store strengths in a map)
+    // Constructor
     public Lab1b() {
-        // No initialization required as we don't store the strengths in a map
+        // Nothing to initialize here
     }
 
-    // Method to battle with a single word input (both sides combined)
+    // Method to handle battle with a single word input
     public void battle(String word) {
         int leftScore = 0;
         int rightScore = 0;
 
-        // Loop through each character in the input word
+        // Loop through each character of the word
         for (char c : word.toCharArray()) {
-            // Determine the strength of each letter using helper methods
+            // Add the scores based on left and right side letter strengths
             leftScore += getLeftStrength(c);
             rightScore += getRightStrength(c);
         }
 
-        // Determine who wins
+        // Check who won
         if (leftScore > rightScore) {
             System.out.println("Left side wins!");
         } else if (rightScore > leftScore) {
@@ -27,22 +27,22 @@ public class Lab1b {
         }
     }
 
-    // Overloaded method to battle with separate left and right words
+    // Overloaded method to battle when we have two separate words
     public void battle(String leftWord, String rightWord) {
         int leftScore = 0;
         int rightScore = 0;
 
-        // Loop through each character in the left word
+        // Calculate score for leftWord
         for (char c : leftWord.toCharArray()) {
             leftScore += getLeftStrength(c);
         }
 
-        // Loop through each character in the right word
+        // Calculate score for rightWord
         for (char c : rightWord.toCharArray()) {
             rightScore += getRightStrength(c);
         }
 
-        // Determine who wins
+        // Determine the winner
         if (leftScore > rightScore) {
             System.out.println("Left side wins!");
         } else if (rightScore > leftScore) {
@@ -52,7 +52,7 @@ public class Lab1b {
         }
     }
 
-    // Helper method to get the strength of left-side letters
+    // Helper method to check strength of left-side letters
     private int getLeftStrength(char c) {
         switch (c) {
             case 'w':
@@ -68,7 +68,7 @@ public class Lab1b {
         }
     }
 
-    // Helper method to get the strength of right-side letters
+    // Helper method to check strength of right-side letters
     private int getRightStrength(char c) {
         switch (c) {
             case 'm':
@@ -85,23 +85,22 @@ public class Lab1b {
     }
 
     public static void main(String[] args) {
-        // Test cases with default strengths
         Lab1b game = new Lab1b();
 
-        // Test case 1: Single word
+        // Test with single word input
         System.out.println("Test 1 (Word: 'z'):");
-        game.battle("z");  // Right side wins!
+        game.battle("z");  // Right side should win
 
-        // Test case 2: Single word with mixed letters
+        // Test with a mix of left and right-side letters
         System.out.println("Test 2 (Word: 'zdqmwpbs'):");
-        game.battle("zdqmwpbs");  // Let's fight again!
+        game.battle("zdqmwpbs");  // Should be a tie
 
-        // Test case 3: Single word, left side strong
+        // Test where left side is stronger
         System.out.println("Test 3 (Word: 'wwwwwwz'):");
-        game.battle("wwwwwwz");  // Left side wins!
+        game.battle("wwwwwwz");  // Left side should win
 
-        // Test case 4: Separate words
+        // Test with two separate words for left and right
         System.out.println("Test 4 (Left Word: 'wbp', Right Word: 'mqdz'):");
-        game.battle("wbp", "mqdz");  // Let's fight again!
+        game.battle("wbp", "mqdz");  // Should result in a tie
     }
 }
