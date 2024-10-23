@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class FrequencyAnalysis {
+public class Lab2a {
     // Static variable to hold the array of numbers
     static int[] numbers;
 

@@ -1,7 +1,7 @@
-public class AlphabetWarGame {
+public class Lab1b {
 
     // Constructor with default settings (no need to store strengths in a map)
-    public AlphabetWarGame() {
+    public Lab1b() {
         // No initialization required as we don't store the strengths in a map
     }
 
@@ -86,7 +86,7 @@ public class AlphabetWarGame {
 
     public static void main(String[] args) {
         // Test cases with default strengths
-        AlphabetWarGame game = new AlphabetWarGame();
+        Lab1b game = new Lab1b();
 
         // Test case 1: Single word
         System.out.println("Test 1 (Word: 'z'):");

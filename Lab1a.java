@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class CreditCardValidator {
+public class Lab1a {  // Changed class name to Lab1a
     private String ccNumber;  // Credit card number
 
     // Constructor to initialize the credit card number
-    public CreditCardValidator(String ccNumber) {
+    public Lab1a(String ccNumber) {
         this.ccNumber = ccNumber;
     }
 
@@ -58,8 +58,8 @@ public class CreditCardValidator {
         System.out.print("Enter your credit card number (8 or 9 digits): ");
         String ccNumber = scanner.nextLine();
 
-        // Create an instance of CreditCardValidator and validate the card
-        CreditCardValidator validator = new CreditCardValidator(ccNumber);
+        // Create an instance of Lab1a and validate the card
+        Lab1a validator = new Lab1a(ccNumber);
         validator.validateCard();
     }
 }

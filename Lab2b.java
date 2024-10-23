@@ -1,4 +1,4 @@
-public class ShareTrader {
+public class Lab2b {
     // Static variable to store the maximum profit
     static int maxProfit;
 
@@ -47,4 +47,3 @@ public class ShareTrader {
         System.out.println("Max Profit: " + maxProfit); // Output: 100
     }
 }
-
