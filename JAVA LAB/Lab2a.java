@@ -8,7 +8,7 @@ public class Lab2a {
     // Method to find the K most frequent numbers in the array
     public static void findTopKFrequent(int K) {
         int n = numbers.length;
-        
+
         // Find the maximum number to determine the frequency array size
         int maxNumber = 0;
         for (int i = 0; i < n; i++) {
@@ -23,7 +23,7 @@ public class Lab2a {
             frequency[numbers[i]]++;
         }
 
-        // Find the top K frequent numbers
+        // Find the top K frequent numbers with the priority condition
         System.out.println("Top " + K + " frequent numbers:");
         int count = 0;
 
@@ -32,9 +32,9 @@ public class Lab2a {
             int maxFreq = 0;
             int mostFrequent = -1;
 
-            // Find the number with the highest frequency left in the array
+            // Find the number with the highest frequency, and larger value in case of a tie
             for (int i = 0; i <= maxNumber; i++) {
-                if (frequency[i] > maxFreq) {
+                if (frequency[i] > maxFreq || (frequency[i] == maxFreq && i > mostFrequent)) {
                     maxFreq = frequency[i];
                     mostFrequent = i;
                 }
