@@ -49,5 +49,6 @@ public class Lab2a {
         int N = sc.nextInt();
 
         numbers = new int[N];
-
+    }
+}
   
