@@ -12,4 +12,5 @@ Key Features
 Demonstrates inheritance by creating specialized classes for different employee types.
 Uses polymorphism to override methods and customize output for each employee type.
 
+
 ![image](https://github.com/user-attachments/assets/db01a6b1-988c-43f0-81c1-4c212a56d395)
