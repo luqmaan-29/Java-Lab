@@ -1,11 +1,13 @@
+import java.util.Scanner;
+
 abstract class Robber {
 
-    // Default method to print machine learning message
+    
     public void MachineLearning() {
-        System.out.println("I love MachineLearning.");
+        System.out.println("I love Machine Learning.");
     }
 
-    // Abstract methods
+    
     public abstract void RobbingClass();
     public abstract int RowHouses(int[] money);
     public abstract int RoundHouses(int[] cash);
@@ -15,13 +17,13 @@ abstract class Robber {
 
 class JAVAProfessionalRobber extends Robber {
 
-    // Printing message for RobbingClass
+    
     @Override
     public void RobbingClass() {
-        System.out.println("MScAI&ML");
+        System.out.println("MSc AI & ML");
     }
 
-    // Helper for RoundHouses
+    
     private int simpleRob(int[] arr, int start, int stop) {
         int robA = 0, robB = 0;
         for (int i = start; i <= stop; i++) {
@@ -32,7 +34,7 @@ class JAVAProfessionalRobber extends Robber {
         return robB;
     }
 
-    // Max money in row houses, no adjecent
+    
     @Override
     public int RowHouses(int[] row) {
         int rob1 = 0, rob2 = 0;
@@ -44,21 +46,20 @@ class JAVAProfessionalRobber extends Robber {
         return rob2;
     }
 
-    // Max money round houses with adjecent start end
+    
     @Override
     public int RoundHouses(int[] round) {
         if (round.length == 1) return round[0];
         return Math.max(simpleRob(round, 0, round.length - 2), simpleRob(round, 1, round.length - 1));
     }
 
-    // Calls RowHouses for square house
+    
     @Override
     public int SquareHouse(int[] square) {
         return RowHouses(square);
     }
 
-    // MultiHouseBuilding sums each type
-    @Override
+    
     public int MultiHouseBuilding(int[]... build) {
         int total = 0;
         for (int[] bld : build) {
@@ -70,17 +71,59 @@ class JAVAProfessionalRobber extends Robber {
 
 public class Lab4 {
     public static void main(String[] args) {
-        JAVAProfessionalRobber robbr = new JAVAProfessionalRobber();
+        Scanner sc = new Scanner(System.in);
+        JAVAProfessionalRobber robber = new JAVAProfessionalRobber();
 
-        // Test cases
-        robbr.RobbingClass();
-        robbr.MachineLearning();
         
-        System.out.println("RowHouses([1,2,3,0]) -> " + robbr.RowHouses(new int[]{1, 2, 3, 0}));
-        System.out.println("RoundHouses([1,2,3,4]) -> " + robbr.RoundHouses(new int[]{1, 2, 3, 4}));
-        System.out.println("SquareHouse([5,10,2,7]) -> " + robbr.SquareHouse(new int[]{5, 10, 2, 7}));
-        System.out.println("MultiHouseBuilding([5,3,8,2],[10,12,7,6],[4,9,11,5],[8,6,3,7]) -> " +
-                robbr.MultiHouseBuilding(new int[]{5, 3, 8, 2}, new int[]{10, 12, 7, 6}, 
-                                         new int[]{4, 9, 11, 5}, new int[]{8, 6, 3, 7}));
+        System.out.println("Welcome to the Robber Simulation Program!");
+        robber.RobbingClass();
+        robber.MachineLearning();
+
+        
+        System.out.print("Enter number of houses for RowHouses: ");
+        int n = sc.nextInt();
+        int[] rowHouses = new int[n];
+        System.out.println("Enter the money in each house:");
+        for (int i = 0; i < n; i++) {
+            rowHouses[i] = sc.nextInt();
+        }
+        System.out.println("Maximum money from RowHouses: " + robber.RowHouses(rowHouses));
+
+        
+        System.out.print("Enter number of houses for RoundHouses: ");
+        int m = sc.nextInt();
+        int[] roundHouses = new int[m];
+        System.out.println("Enter the money in each house:");
+        for (int i = 0; i < m; i++) {
+            roundHouses[i] = sc.nextInt();
+        }
+        System.out.println("Maximum money from RoundHouses: " + robber.RoundHouses(roundHouses));
+
+        
+        System.out.print("Enter number of houses for SquareHouse: ");
+        int p = sc.nextInt();
+        int[] squareHouse = new int[p];
+        System.out.println("Enter the money in each house:");
+        for (int i = 0; i < p; i++) {
+            squareHouse[i] = sc.nextInt();
+        }
+        System.out.println("Maximum money from SquareHouse: " + robber.SquareHouse(squareHouse));
+
+        
+        System.out.print("Enter number of rows of houses for MultiHouseBuilding: ");
+        int q = sc.nextInt();
+        int[][] multiHouses = new int[q][];
+        for (int i = 0; i < q; i++) {
+            System.out.print("Enter number of houses in row " + (i + 1) + ": ");
+            int r = sc.nextInt();
+            multiHouses[i] = new int[r];
+            System.out.println("Enter the money in each house:");
+            for (int j = 0; j < r; j++) {
+                multiHouses[i][j] = sc.nextInt();
+            }
+        }
+        System.out.println("Maximum money from MultiHouseBuilding: " + robber.MultiHouseBuilding(multiHouses));
+
+        sc.close();
     }
 }
