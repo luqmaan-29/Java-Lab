@@ -1,10 +1,9 @@
 // Base Class
 class Book {
     private int bookId;
-    private String title;
-    private String author;
+      private String title;
+     private String author;
     private boolean isAvailable = true;
-
     public Book(int bookId, String title, String author) {
         if (bookId <= 0) {
             System.out.println("Book ID must be positive.");
@@ -19,15 +18,15 @@ class Book {
     public void borrowBook() {
         if (isAvailable) {
             isAvailable = false;
-            System.out.println("Book borrowed: " + title);
+              System.out.println("Book borrowed: " + title);
         } else {
-            System.out.println("Book is unavailable: " + title);
+               System.out.println("Book is unavailable: " + title);
         }
     }
     public void returnBook() {
         if (!isAvailable) {
-            isAvailable = true;
-            System.out.println("Book returned: " + title);
+             isAvailable = true;
+                System.out.println("Book returned: " + title);
         } else {
             System.out.println("Book was not borrowed: " + title);
         }
@@ -43,14 +42,14 @@ class ReferenceBook extends Book {
 
     
     public ReferenceBook(int bookId, String title, String author, int edition) {
-        super(bookId, title, author);
-        this.edition = edition;
+            super(bookId, title, author);
+          this.edition = edition;
     }
 
     
     
     public void displayInfo() {
-        super.displayInfo();
+          super.displayInfo();
         System.out.println("Edition: " + edition);
     }
 }
@@ -61,14 +60,14 @@ class FictionBook extends Book {
 
     
     public FictionBook(int bookId, String title, String author, String genre) {
-        super(bookId, title, author);
-        this.genre = genre;
+         super(bookId, title, author);
+           this.genre = genre;
     }
 
     
     public void displayInfo() {
-        super.displayInfo();
-        System.out.println("Genre: " + genre);
+            super.displayInfo();
+         System.out.println("Genre: " + genre);
     }
 }
 
