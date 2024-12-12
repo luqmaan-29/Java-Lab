@@ -111,7 +111,9 @@ System.out.println("Maximum money from RoundHouses: "+
 robber.RoundHouses(roundHouses));
 
 System.out.print("Enter number of houses for SquareHouse: ")   ; 
-int p = sc.nextInt();int []squareHouse =new int [p];
+
+int p = sc.nextInt();
+int []squareHouse =new int [p];
 System.out.println("Enter the money in each house: ");
 for (int i= 0; i< p; i++)
 { 

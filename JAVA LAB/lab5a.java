@@ -6,26 +6,26 @@ interface BankInterface {
 
 
 class BankA implements BankInterface {
-    private double balance;
+                 private double balance;
 
     public BankA(double balance) {
         this.balance = balance;
     }
 
-    @Override
+    
     public double getBalance() {
         return balance;
     }
 
-    @Override
+    
     public double getInterestRate() {
-        return 7.0; // Interest rate for BankA
+        return 7.0; 
     }
 }
 
 
 class BankB implements BankInterface {
-    private double balance;
+               private double balance;
 
     public BankB(double balance) {
         this.balance = balance;
@@ -38,13 +38,13 @@ class BankB implements BankInterface {
 
     
     public double getInterestRate() {
-        return 7.4; // Interest rate for BankB
+        return 7.4; 
     }
 }
 
 
 class BankC implements BankInterface {
-    private double balance;
+            private double balance;
 
     public BankC(double balance) {
         this.balance = balance;
@@ -57,7 +57,7 @@ class BankC implements BankInterface {
 
     
     public double getInterestRate() {
-        return 7.9; // Interest rate for BankC
+        return 7.9; 
     }
 }
 
