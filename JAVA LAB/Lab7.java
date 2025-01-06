@@ -77,7 +77,8 @@ class Order {
 
     @Override
     public String toString() {
-        return "Order [ID=" + id + ", CustomerID=" + customerId + ", ProductID=" + productId + ", OrderDate=" + orderDate + "]";
+        return "Order [ID=" + id + ", CustomerID=" + customerId + ", ProductID=" + productId + ", OrderDate="
+                + orderDate + "]";
     }
 }
 
@@ -181,8 +182,8 @@ public class Lab7 {
     private static void viewCustomers() {
         System.out.println("\n--- Customers Sorted by Loyalty Points ---");
         customers.stream()
-                 .sorted((c1, c2) -> Integer.compare(c2.getLoyaltyPoints(), c1.getLoyaltyPoints()))
-                 .forEach(System.out::println);
+                .sorted((c1, c2) -> Integer.compare(c2.getLoyaltyPoints(), c1.getLoyaltyPoints()))
+                .forEach(System.out::println);
     }
 
     private static void viewProducts() {

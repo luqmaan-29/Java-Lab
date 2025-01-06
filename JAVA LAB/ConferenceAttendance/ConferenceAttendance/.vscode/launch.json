@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "java",
+        "name": "Debug (Launch) - Current File",
+        "request": "launch",
+        "mainClass": "",
+        "projectName": "ConferenceAttendees",
+        "vmArgs": "C:/Users/mohammed luqmaan/OneDrive/Desktop/JAVA/JAVA LAB/ConferenceAttendance/ConferenceAttendance/lib/mysql-connector-j-9.1.0.jar"
+      }
+    ]
+  }
+  
